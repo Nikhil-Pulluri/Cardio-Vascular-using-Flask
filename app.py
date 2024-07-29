@@ -5,7 +5,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
 
-
 app = Flask(__name__)
 
 # Load the dataset

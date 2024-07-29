@@ -11,12 +11,10 @@
             overflow-x: hidden;
             color: #333;
             background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-            background-image: url("templates/Images/Designer.png");
-
         }
-
         .parallax {
-            height: 100vh;
+            background-image: url('Images/Designer1.png');
+            height: 100%;
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
@@ -30,23 +28,16 @@
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             width: 90%;
-            max-width: 500px;
+            max-width: 400px;
             margin: 40px auto;
             text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        h1{
-            color: white;
         }
         h2 {
             color: #ff416c;
             margin-bottom: 20px;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
         }
-
         label {
             display: block;
             margin: 15px 0 5px;
@@ -54,7 +45,6 @@
             color: #ff4b2b;
             font-weight: bold;
         }
-
         input[type="text"], input[type="number"], select {
             width: 100%;
             padding: 12px;
@@ -65,18 +55,15 @@
             background-color: #fafafa;
             transition: border-color 0.3s ease, background-color 0.3s ease;
         }
-
         input[type="number"]::-webkit-inner-spin-button, 
         input[type="number"]::-webkit-outer-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
-
         input[type="text"]:focus, input[type="number"]:focus {
             border-color: #ff416c;
             background-color: #fff;
         }
-
         input[type="submit"] {
             width: 100%;
             padding: 12px;
@@ -88,12 +75,10 @@
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
-
         input[type="submit"]:hover {
             background-color: #ff4b2b;
             transform: scale(1.05);
         }
-
         input[type="submit"]:active {
             background-color: #e03e6c;
         }
@@ -104,38 +89,14 @@
             font-size: 14px;
             margin-top: 10px;
         }
-
         .loading {
             display: none;
             color: #ff416c;
             font-size: 16px;
             margin-top: 20px;
         }
-
         .loading.active {
             display: block;
-        }
-
-        /* Additional Styling */
-        .header {
-            background-color: rgb(238, 46, 123);
-            padding: 10px 20px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            z-index: 10;
-            box-shadow: 0 2px 4px rgba(0, 0, 0,0.1);
-        }
-
-        .footer {
-            background-color: rgba(255, 255, 255, 0);
-            padding: 5px 10px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            z-index: 10;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
         }
     </style>
     <script>
@@ -154,14 +115,10 @@
     </script>
 </head>
 <body>
-    <div class="header">
-        <h1>Cardio-Vascular Disease Predictor</h1>
-    </div>
-
     <div class="parallax"></div>
 
     <div class="container">
-        <h2>Predict Your Risk</h2>
+        <h2>Cardio-Vascular Disease Predictor</h2>
         <form id="predictionForm" action="/predict" method="post">
             <label for="age">Age:</label>
             <input type="number" id="age" name="age" required min="0" step="1">
@@ -202,6 +159,8 @@
             <label for="thal">Thalassemia (1 = normal, 2 = fixed defect, 3 = reversible defect):</label>
             <input type="number" id="thal" name="thal" required min="1" max="3" step="1">
 
+            
+
             <input type="submit" value="Predict">
         </form>
         <div id="loading" class="loading">Processing...</div>
@@ -214,9 +173,5 @@
     </div>
 
     <div class="parallax"></div>
-
-    <div class="footer">
-        <p>&copy; 2024 Cardio-Vascular Disease Predictor</p>
-    </div>
 </body>
 </html>
