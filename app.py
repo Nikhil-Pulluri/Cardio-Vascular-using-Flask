@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
-from sklearn.linear_model import LogisticRegression
+from xgboost import XGBClassifier  # Import XGBoost
 
 app = Flask(__name__)
 
@@ -43,8 +43,8 @@ scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
-# Train the Logistic Regression model
-model = LogisticRegression()
+# Train the XGBoost model
+model = XGBClassifier(use_label_encoder=False, eval_metric='logloss')
 model.fit(X_train, y_train)
 
 @app.route('/')
@@ -84,3 +84,6 @@ def predict():
         return render_template('index.html', prediction_text=result)
     except Exception as e:
         return str(e)
+
+if __name__ == '__main__':
+    app.run(debug=True)
